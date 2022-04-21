@@ -1,0 +1,30 @@
+sir before reading the code please watch the basic video that i gave you i.e. php in 40 mins and mysql in 40 mins.
+
+after you have watched the video,read the following:
+
+the only things i have used apart from the video are..
+1. redirecting the user:
+    in the file tools.php i have declared a function load()
+     see redirecting the user to another page is pretty easy except the fact that u have to generate a valid url of the page u want the user to redirect to, u have to take care of the slashes "/"     eg. the url u want to redirect is "www.khalsa.com/admission/ug/2017" now u see there are many slashes so u have to trim all the extra slashes and finally  ADD THE header() FUNCTION WHICH IS USED TO REDIRECT THE USER
+ 
+it takes a parameter Location which contains the url of the page.write it as
+  header("Location:$url");
+
+the file connect_db.php is used to establish the connection to the database and we include the file as require('connect_db.php')
+always remember that the database connection file should be kept outside the htdocs file to prevent any unauthorisez attempt to access your database.In that case we write require('../connect_db.php');
+
+now this is to notice that there are two ways to access other php files in your directory.
+one is as I told you through require()
+the other is include"file name")
+
+now when to use include and when to use require?
+
+when u just want to access the functions of that file use require but if u want the whole content of the file to be displayed on your webpage use include eg instead of making header for every file i just made one header.html file and include() it in every file to save effort and time.
+
+
+for further documentation follow these steps:
+ 1 go to index.php
+ 2 go to connect_db.php
+ 3 go to all.php
+ 4 go to new_challan.php
+ 5 go to add.php 
